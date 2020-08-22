@@ -30,10 +30,10 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
-import com.oriondev.moneywallet.storage.preference.PreferenceManager;
+import com.oriondev.moneywallet.BuildConfig;
 
 /**
  * This content provider exposes the full SQLiteDatabase structure.
@@ -41,7 +41,7 @@ import com.oriondev.moneywallet.storage.preference.PreferenceManager;
  */
 public class SyncContentProvider extends ContentProvider {
 
-    private static final String AUTHORITY = "com.oriondev.moneywallet.storage.sync";
+    private static final String AUTHORITY = BuildConfig.APPLICATION_ID + ".storage.sync";
 
     public static final Uri CONTENT_CURRENCIES = Uri.parse("content://" + AUTHORITY + "/currencies");
     public static final Uri CONTENT_WALLETS = Uri.parse("content://" + AUTHORITY + "/wallets");

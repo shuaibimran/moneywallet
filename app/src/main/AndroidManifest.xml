@@ -28,6 +28,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -36,12 +37,17 @@
         android:supportsRtl="true"
         android:allowBackup="false"
         android:theme="@style/MoneyWalletAppTheme"
-        tools:replace="android:allowBackup" >
+        android:requestLegacyExternalStorage="true"
+        tools:replace="android:allowBackup"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.activity.LauncherActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
         <activity android:name=".ui.activity.MainActivity" />
         <activity android:name=".ui.activity.TutorialActivity" />
@@ -93,17 +99,17 @@
 
         <provider
             android:name=".storage.database.DataContentProvider"
-            android:authorities="com.oriondev.moneywallet.storage.data"
-            android:readPermission="com.oriondev.moneywallet.permission.READ_DATA"
-            android:writePermission="com.oriondev.moneywallet.permission.WRITE_DATA"
+            android:authorities="${applicationId}.storage.data"
+            android:readPermission="${applicationId}.permission.READ_DATA"
+            android:writePermission="${applicationId}.permission.WRITE_DATA"
             android:exported="true" />
         <provider
             android:name=".storage.database.SyncContentProvider"
-            android:authorities="com.oriondev.moneywallet.storage.sync"
+            android:authorities="${applicationId}.storage.sync"
             android:exported="false" />
         <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.oriondev.moneywallet.storage.file"
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.storage.file"
             android:grantUriPermissions="true"
             android:exported="false" >
             <meta-data

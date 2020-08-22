@@ -185,6 +185,26 @@
           "icon": "ic_perm_identity_black_24dp",
           "title": "herotux",
           "subtitle": "Persian"
+        },{
+          "icon": "ic_perm_identity_black_24dp",
+          "title": "heyarne",
+          "subtitle": "German"
+        },{
+          "icon": "ic_perm_identity_black_24dp",
+          "title": "SotirisFtiakas",
+          "subtitle": "Greek"
+        },{
+          "icon": "ic_perm_identity_black_24dp",
+          "title": "CedArctic",
+          "subtitle": "Greek"
+        },{
+          "icon": "ic_perm_identity_black_24dp",
+          "title": "FoseFx",
+          "subtitle": "German"
+        },{
+          "icon": "ic_perm_identity_black_24dp",
+          "title": "bendaf",
+          "subtitle": "Hungarian"
         }
       ]
     }
